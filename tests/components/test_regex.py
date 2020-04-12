@@ -4,6 +4,7 @@
 # __credits__ = ["Ronie Martinez"]
 # __maintainer__ = "Ronie Martinez"
 # __email__ = "ronmarti18@gmail.com"
+import os
 import re
 from typing import Any, Dict, List
 from unittest import mock
@@ -92,7 +93,7 @@ def test_persist(
     extractor.train(training_data)
     assert expected == extractor.persist("filename", "model_dir")
     if persisted:
-        write_json_to_file.assert_called_once_with("model_dir/filename.json", regex_features)
+        write_json_to_file.assert_called_once_with(os.path.join("model_dir", "filename.json"), regex_features)
     else:
         write_json_to_file.assert_not_called()
 
@@ -102,7 +103,7 @@ def test_persist(
 def test_load(read_json_file: mock.MagicMock, meta: Dict[str, Any], loaded: bool) -> None:
     extractor = RegexEntityExtractor.load(meta, "model_dir")
     if loaded:
-        read_json_file.assert_called_once_with("model_dir/test.json")
+        read_json_file.assert_called_once_with(os.path.join("model_dir", "test.json"))
         assert isinstance(extractor, RegexEntityExtractor)
     else:
         read_json_file.assert_not_called()
