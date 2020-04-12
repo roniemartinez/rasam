@@ -11,7 +11,8 @@ branches:
 
 install:
   - choco install make -y
-  - 'set PATH=%PYTHON%\\Scripts;%PATH%'
+  - 'set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%'
+  - python -m pip install -U pip setuptools
   - make install
 
 build: off

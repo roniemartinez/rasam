@@ -1,6 +1,5 @@
 install:
 	pip3 install poetry==1.0.5
-	poetry run pip install -U pip setuptools
 	poetry install
 
 style:
