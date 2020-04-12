@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "rasam"
+version = "0.1.0-alpha.0"
+description = "Rasa Improvements"
+authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "rasam" },
+]
+keywords = [
+    "URL extractor for Rasa",
+    "Regex entity extractor for Rasa",
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.6,<4"
+rasa = "*"
+urlextract = "^0.14.0"
+
+[tool.poetry.dev-dependencies]
+autoflake = "^1.3.1"
+isort = "^4.3.21"
+black = "^19.10b0"
+flake8 = "^3.7.9"
+mypy = "^0.770"
+pytest = "^5.4.1"
+pytest-cov = "^2.8.1"
+codecov = "^2.0.22"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
