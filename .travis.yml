@@ -24,10 +24,6 @@ matrix:
       os: osx
       language: shell
       python: 3.8
-    - name: "Python: pypy3"
-      os: osx
-      language: shell
-      python: pypy3
 
 branches:
   except:
@@ -37,6 +33,7 @@ install:
   - make install
 
 script:
+  - pip3 install -U pip setuptools
   - make test
 
 after_success:
