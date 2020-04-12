@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rasam"
-version = "0.1.0-alpha.3"
+version = "0.1.0"
 description = "Rasa Improvements"
 authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
 license = "MIT"
@@ -24,7 +24,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.6,<3.8"
-rasa = "*"
+rasa = "^1.9.5"
 urlextract = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
