@@ -1,5 +1,39 @@
 # rasam
+
 Rasa Improvements
+
+<table>
+    <tr>
+        <td>License</td>
+        <td><img src='https://img.shields.io/pypi/l/rasam.svg' alt="License"></td>
+        <td>Version</td>
+        <td><img src='https://img.shields.io/pypi/v/rasam.svg' alt="Version"></td>
+    </tr>
+    <tr>
+        <td>Travis CI</td>
+        <td><img src='https://travis-ci.org/roniemartinez/rasam.svg?branch=develop' alt="Travis CI"></td>
+        <td>Coverage</td>
+        <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/develop/graph/badge.svg' alt="CodeCov"></td>
+    </tr>
+    <tr>
+        <td>AppVeyor</td>
+        <td><img src='https://ci.appveyor.com/api/projects/status/9jd435vy2csjjkvo/branch/develop?svg=true' alt="AppVeyor"></td>
+        <td>Supported versions</td>
+        <td><img src='https://img.shields.io/pypi/pyversions/rasam.svg' alt="Python Versions"></td>
+    </tr>
+    <tr>
+        <td>Wheel</td>
+        <td><img src='https://img.shields.io/pypi/wheel/rasam.svg' alt="Wheel"></td>
+        <td>Implementation</td>
+        <td><img src='https://img.shields.io/pypi/implementation/rasam.svg' alt="Implementation"></td>
+    </tr>
+    <tr>
+        <td>Status</td>
+        <td><img src='https://img.shields.io/pypi/status/rasam.svg' alt="Status"></td>
+        <td>Downloads</td>
+        <td><img src='https://img.shields.io/pypi/dm/rasam.svg' alt="Downloads"></td>
+    </tr>
+</table>
 
 ## Usage
 
@@ -18,4 +52,6 @@ pipeline:
 ```
 
 ## Author
-[Ronie Martinez](ronmarti18@gmail.com)
+[Ronie Martinez](ronmarti18@gmail.com) 
+
+<a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
