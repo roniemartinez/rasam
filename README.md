@@ -32,7 +32,7 @@ Rasa Improved
 ## Support
 If you like `rasam` or if it is useful to you, show your support by buying me a coffee.
 
-<a href=| https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174 |
+<a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 ## Usage
 
