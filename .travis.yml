@@ -3,7 +3,6 @@ language: python
 cache:
   - pip: true
   - directories:
-      - $HOME/Library/Caches/pypoetry
       - $HOME/.cache/pypoetry
 
 python:
@@ -16,10 +15,42 @@ matrix:
       os: osx
       language: shell
       python: 3.6
+      cache:
+        - directories:
+          - $HOME/Library/Caches/pip
+          - $HOME/Library/Caches/pypoetry
     - name: "Python: 3.7"
       os: osx
       language: shell
       python: 3.7
+      cache:
+        - directories:
+          - $HOME/Library/Caches/pip
+          - $HOME/Library/Caches/pypoetry
+    - name: "Python: 3.6"
+      os: windows
+      language: shell
+      before_install:
+        - choco install python --version=3.6.8
+        - choco install make
+        - python -m pip install -U pip setuptools
+      env: PATH=/c/Python36:/c/Python36/Scripts:$PATH
+      cache:
+        directories:
+          - $LOCALAPPDATA/pip/Cache
+          - $LOCALAPPDATA/pypoetry/cache
+    - name: "Python: 3.7"
+      os: windows
+      language: shell
+      before_install:
+        - choco install python --version=3.7.7
+        - choco install make
+        - python -m pip install -U pip setuptools
+      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+      cache:
+        directories:
+          - $LOCALAPPDATA/pip/Cache
+          - $LOCALAPPDATA/pypoetry/cache
 
 branches:
   except:
@@ -29,7 +60,6 @@ install:
   - make install
 
 script:
-  - pip3 install -U pip setuptools
   - make test
 
 after_success:
