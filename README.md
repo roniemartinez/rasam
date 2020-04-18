@@ -1,6 +1,6 @@
 # rasam
 
-Rasa Improvements
+Rasa Improved
 
 <table>
     <tr>
@@ -16,16 +16,10 @@ Rasa Improvements
         <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/master/graph/badge.svg' alt="CodeCov"></td>
     </tr>
     <tr>
-        <td>AppVeyor</td>
-        <td><img src='https://ci.appveyor.com/api/projects/status/9jd435vy2csjjkvo/branch/master?svg=true' alt="AppVeyor"></td>
         <td>Supported versions</td>
         <td><img src='https://img.shields.io/pypi/pyversions/rasam.svg' alt="Python Versions"></td>
-    </tr>
-    <tr>
         <td>Wheel</td>
         <td><img src='https://img.shields.io/pypi/wheel/rasam.svg' alt="Wheel"></td>
-        <td>Implementation</td>
-        <td><img src='https://img.shields.io/pypi/implementation/rasam.svg' alt="Implementation"></td>
     </tr>
     <tr>
         <td>Status</td>
@@ -51,10 +45,71 @@ pip install rasam
 ### Rasa `config.yml`
 
 ```yaml
+importers:
+  - name: rasam.PlaceholderImporter
+    fake_data_count: 10  # default value is 1
+
 pipeline:
   - name: rasam.RegexEntityExtractor
   - name: rasam.URLEntityExtractor
 ```
+
+### Rasa `nlu.md`
+
+#### PlaceholderImporter
+
+The `PlaceholderImporter` removes the need to write unnecessary information (eg. name, address, numbers, etc.) and helps focus on writing test data.
+
+#### Using `{}` placeholder
+
+```markdown
+## intent:tell_name
+- My name is {name}
+- I am {name} and he is {name}
+```
+
+#### Using `@` placeholder
+
+```markdown
+## intent:tell_address
+- I live in @address
+- I stay at @address and @address
+```
+
+#### Mixing `{}` and `@` placeholders
+
+It is possible to mix both `{}` and `@` placeholders but it is recommended to use only one style for consistency.
+
+#### Available placeholders
+
+- any (if you need just any data)    
+- integer    
+- decimal    
+- number     
+- name       
+- first_name 
+- last_name  
+- text       
+- word       
+- paragraph  
+- uri        
+- url        
+- local_uri  
+- email      
+- date         
+- time         
+- month        
+- day          
+- timezone     
+- company      
+- license_plate
+- address
+- city
+- country
+- user_agent
+- password
+- user_name
+- file_path
 
 ## Author
 [Ronie Martinez](ronmarti18@gmail.com) 
