@@ -1,6 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
 
 rasam
 =====
@@ -43,7 +40,7 @@ Support
 
 If you like ``rasam`` or if it is useful to you, show your support by buying me a coffee.
 
-:raw-html-m2r:`<a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>`
+<a href=| https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174 |
 
 Usage
 -----
@@ -74,7 +71,7 @@ Rasa ``nlu.md``
 PlaceholderImporter
 ~~~~~~~~~~~~~~~~~~~
 
-The PlaceholderImporter removes the need to write unnecessary information (eg. name, address, numbers, etc.) and helps focus on writing test data.
+The ``PlaceholderImporter`` removes the need to write unnecessary information (eg. name, address, numbers, etc.) and helps focus on writing test data.
 
 Using ``{}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -102,7 +99,35 @@ It is possible to mix both ``{}`` and ``@`` placeholders but it is recommended t
 Available placeholders
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Under construction.
+
+* any (if you need just any data)    
+* integer    
+* decimal    
+* number     
+* name       
+* first_name 
+* last_name  
+* text       
+* word       
+* paragraph  
+* uri        
+* url        
+* local_uri  
+* email      
+* date         
+* time         
+* month        
+* day          
+* timezone     
+* company      
+* license_plate
+* address
+* city
+* country
+* user_agent
+* password
+* user_name
+* file_path
 
 Author
 ------
