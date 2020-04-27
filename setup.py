@@ -24,7 +24,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='rasam',
-    version='0.2.0',
+    version='0.3.0',
     description='Rasa Improved',
     python_requires='<3.8,>=3.6',
     author='Ronie Martinez',
