@@ -111,5 +111,47 @@ It is possible to mix both `{}` and `@` placeholders but it is recommended to us
 - user_name
 - file_path
 
+### Rasam decorators
+
+Rasa relies too heavily on classes to define objects like actions, forms, etc. 
+Rasam aims to remove these Rasa boilerplates to make writing chatbots easier.
+
+#### @action decorator
+
+The `@action` decorator converts function into an Action classes. 
+Here is an example of how we can write custom classes in Rasa:
+
+```python
+class ActionHelloWorld(Action):
+
+    def name(self) -> Text:
+        return "action_hello_world"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="Hello World!")
+
+        return []
+
+```
+
+The above code can be simplified using Rasam's `@action` decorator.
+
+```python
+from rasam import action
+
+
+@action
+def action_hello_world(
+    self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+) -> List[Dict[Text, Any]]:
+    dispatcher.utter_message(text="Hello World!")
+    return []
+```
+
+
+
 ## Author
 [Ronie Martinez](ronmarti18@gmail.com) 
