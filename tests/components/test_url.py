@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# __author__ = "Ronie Martinez"
-# __copyright__ = "Copyright 2020, Ronie Martinez"
-# __credits__ = ["Ronie Martinez"]
-# __maintainer__ = "Ronie Martinez"
-# __email__ = "ronmarti18@gmail.com"
 from typing import Any, Dict, List
 from unittest import mock
 
@@ -20,10 +14,9 @@ def test_init() -> None:
 
 @pytest.mark.parametrize(
     "text, expected",
-    ids=["no_url", "has_url", "has_multiple_urls"],
-    argvalues=[
-        ("goto google", []),
-        (
+    [
+        pytest.param("goto google", [], id="no-url"),
+        pytest.param(
             "goto google.com",
             [
                 {
@@ -35,8 +28,9 @@ def test_init() -> None:
                     "confidence": 1.0,
                 }
             ],
+            id="has-url",
         ),
-        (
+        pytest.param(
             "goto google.com facebook.com",
             [
                 {
@@ -56,12 +50,13 @@ def test_init() -> None:
                     "confidence": 1.0,
                 },
             ],
+            id="has-multiple-urls",
         ),
     ],
 )
 def test_process(text: str, expected: List[Dict[str, Any]]) -> None:
     message = mock.MagicMock()
-    message.text = text
+    message.data = {"text": text}
     message.get.return_value = []
 
     extractor = URLEntityExtractor()

@@ -19,9 +19,9 @@ Rasa Improved
        </tr>
        <tr>
            <td>Travis CI</td>
-           <td><img src='https://travis-ci.org/roniemartinez/rasam.svg?branch=develop' alt="Travis CI"></td>
+           <td><img src='https://www.travis-ci.com/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
            <td>Coverage</td>
-           <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/develop/graph/badge.svg' alt="CodeCov"></td>
+           <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/master/graph/badge.svg' alt="CodeCov"></td>
        </tr>
        <tr>
            <td>Supported versions</td>
@@ -51,15 +51,15 @@ Usage
 Installation
 ^^^^^^^^^^^^
 
-```shell script
-pip install rasam
+.. code-block:: bash
 
-.. code-block::
+   pip install rasam
 
+Rasa ``config.yml``
+^^^^^^^^^^^^^^^^^^^^^^^
 
-   ### Rasa `config.yml`
+.. code-block:: yaml
 
-   ```yaml
    importers:
      - name: rasam.PlaceholderImporter
        fake_data_count: 10  # default value is 1
@@ -141,7 +141,7 @@ Rasam aims to remove these Rasa boilerplates to make writing chatbots easier.
 @action decorator
 ~~~~~~~~~~~~~~~~~
 
-The ``@action`` decorator converts function into an Action classes. 
+The ``@action`` decorator converts function into an Action class. 
 Here is an example of how we can write custom classes in Rasa:
 
 .. code-block:: python

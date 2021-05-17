@@ -1,18 +1,14 @@
-#!/usr/bin/env python
-# __author__ = "Ronie Martinez"
-# __copyright__ = "Copyright 2020, Ronie Martinez"
-# __credits__ = ["Ronie Martinez"]
-# __maintainer__ = "Ronie Martinez"
-# __email__ = "ronmarti18@gmail.com"
 import logging
 import re
 from typing import Any, AsyncIterator, List, Optional, Text, Tuple
 
 import faker
 from faker import Faker
-from rasa.importers.rasa import RasaFileImporter
-from rasa.nlu.training_data import Message, TrainingData, loading
-from rasa.nlu.training_data.formats import MarkdownReader
+from rasa.shared.importers.rasa import RasaFileImporter
+from rasa.shared.nlu.training_data import loading
+from rasa.shared.nlu.training_data.entities_parser import find_entities_in_training_example
+from rasa.shared.nlu.training_data.message import Message
+from rasa.shared.nlu.training_data.training_data import TrainingData
 
 logger = logging.getLogger(__name__)
 
@@ -66,7 +62,7 @@ class PlaceholderImporter(RasaFileImporter):
         "file_path": lambda faker_: faker_.file_path(),
     }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args: Any, **kwargs: Any):
         super().__init__(*args, **kwargs)
         keys = "|".join(self.FAKE_MAP.keys())
         regex = f"(\\{{({keys}|any)\\}}|@({keys}|any)(?=([^\\w]|$|@)))"
@@ -91,7 +87,7 @@ class PlaceholderImporter(RasaFileImporter):
             example: Message
             for example in data.training_examples:
                 if example.get("intent"):
-                    matches = [i async for i in self.find_placeholders(example.text)]
+                    matches = [i async for i in self.find_placeholders(example.data.get("text"))]
                     if matches:
                         async for new_message in self.replace_placeholders(example, faker_, matches, fake_data_count):
                             training_examples.append(new_message)
@@ -101,12 +97,12 @@ class PlaceholderImporter(RasaFileImporter):
                     training_examples.append(example)
             new_training_data.append(
                 TrainingData(
-                    training_examples, data.entity_synonyms, data.regex_features, data.lookup_tables, data.nlg_stories
+                    training_examples, data.entity_synonyms, data.regex_features, data.lookup_tables, data.responses
                 )
             )
 
         merged_training_data = TrainingData().merge(*new_training_data)
-        merged_training_data.fill_response_phrases()
+        merged_training_data._fill_response_phrases()
         return merged_training_data
 
     async def replace_placeholders(
@@ -114,9 +110,9 @@ class PlaceholderImporter(RasaFileImporter):
     ) -> AsyncIterator[Message]:
         original_text = await self.rebuild_original_text(example)
         for _ in range(count):
-            text = await self.replace_placeholders_in_text(example.text, faker_, matches)
+            text = await self.replace_placeholders_in_text(example.data.get("text"), faker_, matches)
             original_text = await self.replace_placeholders_in_text(original_text, faker_, matches)
-            entities = MarkdownReader._find_entities_in_training_example(original_text)
+            entities = find_entities_in_training_example(original_text)
             new_message = Message.build(text, example.get("intent"), entities)
             yield new_message
 
@@ -142,7 +138,7 @@ class PlaceholderImporter(RasaFileImporter):
         yields: Tuple(placeholder text, placeholder name, match start)
         """
         for item in self.placeholder_regex.finditer(text):
-            yield (*[i for i in item.groups() if i][:2], item.start())
+            yield *[i for i in item.groups() if i][:2], item.start()
 
     @staticmethod
     async def rebuild_original_text(example: Message) -> str:
@@ -150,7 +146,7 @@ class PlaceholderImporter(RasaFileImporter):
         Rebuilds original training text in Markdown form.
         """
         original_entities = example.get("entities")
-        original_text = example.text
+        original_text = example.data.get("text")
         if original_entities:
             original_text = list(original_text)
             for entity in sorted(original_entities, key=lambda x: x.get("start"), reverse=True):

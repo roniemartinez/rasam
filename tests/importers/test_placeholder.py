@@ -1,23 +1,19 @@
-#!/usr/bin/env python
-# __author__ = "Ronie Martinez"
-# __copyright__ = "Copyright 2020, Ronie Martinez"
-# __credits__ = ["Ronie Martinez"]
-# __maintainer__ = "Ronie Martinez"
-# __email__ = "ronmarti18@gmail.com"
 from typing import Any, Dict, List, Tuple
+from unittest import mock
 
-import asynctest
 import faker
 import pytest
-from rasa.nlu.training_data import Message, TrainingData, loading
+from rasa.shared.nlu.training_data import loading
+from rasa.shared.nlu.training_data.message import Message
+from rasa.shared.nlu.training_data.training_data import TrainingData
 
 from rasam import PlaceholderImporter
 
 
-@asynctest.patch.object(loading, "load_data")
-@asynctest.patch.object(faker, "Faker")
+@mock.patch.object(loading, "load_data")
+@mock.patch.object(faker, "Faker")
 @pytest.mark.asyncio
-async def test_get_nlu_data(Faker: asynctest.MagicMock, load_data: asynctest.MagicMock) -> None:
+async def test_get_nlu_data(Faker: mock.AsyncMock, load_data: mock.AsyncMock) -> None:
     faker_ = Faker()
     faker_.name.return_value = "Nikola Tesla"
     training_data = TrainingData(
@@ -42,6 +38,7 @@ async def test_get_nlu_data(Faker: asynctest.MagicMock, load_data: asynctest.Mag
         Message.build("hello Nikola Tesla", "intent_test"),
         Message.build("hello"),
     ]
+    assert len(new_training_data.training_examples) == len(expected_messages)
     for message, expected in zip(new_training_data.training_examples, expected_messages):
         assert message.get("intent") == expected.get("intent")
         assert message.get("text") == expected.get("text")
@@ -68,10 +65,10 @@ async def test_get_nlu_data(Faker: asynctest.MagicMock, load_data: asynctest.Mag
         ),
     ],
 )
-@asynctest.patch.object(faker, "Faker")
+@mock.patch.object(faker, "Faker")
 @pytest.mark.asyncio
 async def test_replace_placeholders(
-    faker_: asynctest.MagicMock,
+    faker_: mock.AsyncMock,
     test: str,
     text: str,
     fake_data: List[str],
@@ -84,8 +81,7 @@ async def test_replace_placeholders(
     message = Message.build(text)
     index = 0
     async for new_message in importer.replace_placeholders(message, faker_, matches, count):
-        print(new_message.as_dict())
-        assert new_message.text == expected[index]
+        assert new_message.data.get("text") == expected[index]
         index += 1
     assert index == count
 
@@ -158,10 +154,10 @@ async def test_replace_placeholders(
         ),
     ],
 )
-@asynctest.patch.object(faker, "Faker")
+@mock.patch.object(faker, "Faker")
 @pytest.mark.asyncio
 async def test_replace_placeholders_in_text(
-    faker_: asynctest.MagicMock,
+    faker_: mock.AsyncMock,
     test: str,
     text: str,
     fake_data: Dict[str, List[str]],
