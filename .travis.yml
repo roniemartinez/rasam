@@ -14,6 +14,7 @@ addons:
   homebrew:
     packages:
       - bazel
+    update: true
 
 matrix:
   include:
