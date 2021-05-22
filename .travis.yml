@@ -14,12 +14,12 @@ addons:
   homebrew:
     packages:
       - bazel
-    update: true
 
 matrix:
   include:
     - name: "Python: 3.6"
       os: osx
+      osx_image: xcode11
       language: shell
       python: 3.6
       cache:
@@ -28,6 +28,7 @@ matrix:
           - $HOME/Library/Caches/pypoetry
     - name: "Python: 3.7"
       os: osx
+      osx_image: xcode11
       language: shell
       python: 3.7
       cache:
@@ -36,6 +37,7 @@ matrix:
           - $HOME/Library/Caches/pypoetry
     - name: "Python: 3.8"
       os: osx
+      osx_image: xcode11
       language: shell
       python: 3.8
       cache:
