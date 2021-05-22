@@ -10,12 +10,8 @@ from rasa.shared.nlu.training_data.training_data import TrainingData
 from rasam import PlaceholderImporter
 
 
-@mock.patch.object(loading, "load_data")
-@mock.patch.object(faker, "Faker")
 @pytest.mark.asyncio
-async def test_get_nlu_data(Faker: mock.AsyncMock, load_data: mock.AsyncMock) -> None:
-    faker_ = Faker()
-    faker_.name.return_value = "Nikola Tesla"
+async def test_get_nlu_data() -> None:
     training_data = TrainingData(
         training_examples=[
             Message.build("hello", "intent_test"),
@@ -23,25 +19,28 @@ async def test_get_nlu_data(Faker: mock.AsyncMock, load_data: mock.AsyncMock) ->
             Message.build("hello"),
         ]
     )
-    load_data.return_value = training_data
+    with mock.patch.object(loading, "load_data") as load_data, mock.patch.object(faker, "Faker") as Faker:
+        faker_ = Faker()
+        faker_.name.return_value = "Nikola Tesla"
+        load_data.return_value = training_data
 
-    importer = PlaceholderImporter()
-    importer.config = {"importers": [{"name": "rasam.PlaceholderImporter"}]}
-    importer._nlu_files = ["test"]
-    new_training_data = await importer.get_nlu_data()
+        importer = PlaceholderImporter()
+        importer.config = {"importers": [{"name": "rasam.PlaceholderImporter"}]}
+        importer._nlu_files = ["test"]
+        new_training_data = await importer.get_nlu_data()
 
-    faker_.seed_instance.assert_called_once_with(importer.DEFAULT_FAKE_DATA_COUNT)
-    load_data.assert_called_once_with("test", "en")
-    message: Message
-    expected_messages = [
-        Message.build("hello", "intent_test"),
-        Message.build("hello Nikola Tesla", "intent_test"),
-        Message.build("hello"),
-    ]
-    assert len(new_training_data.training_examples) == len(expected_messages)
-    for message, expected in zip(new_training_data.training_examples, expected_messages):
-        assert message.get("intent") == expected.get("intent")
-        assert message.get("text") == expected.get("text")
+        faker_.seed_instance.assert_called_once_with(importer.DEFAULT_FAKE_DATA_COUNT)
+        load_data.assert_called_once_with("test", "en")
+        message: Message
+        expected_messages = [
+            Message.build("hello", "intent_test"),
+            Message.build("hello Nikola Tesla", "intent_test"),
+            Message.build("hello"),
+        ]
+        assert len(new_training_data.training_examples) == len(expected_messages)
+        for message, expected in zip(new_training_data.training_examples, expected_messages):
+            assert message.get("intent") == expected.get("intent")
+            assert message.get("text") == expected.get("text")
 
 
 @pytest.mark.parametrize(
@@ -68,7 +67,7 @@ async def test_get_nlu_data(Faker: mock.AsyncMock, load_data: mock.AsyncMock) ->
 @mock.patch.object(faker, "Faker")
 @pytest.mark.asyncio
 async def test_replace_placeholders(
-    faker_: mock.AsyncMock,
+    faker_: mock.Mock,
     test: str,
     text: str,
     fake_data: List[str],
@@ -157,7 +156,7 @@ async def test_replace_placeholders(
 @mock.patch.object(faker, "Faker")
 @pytest.mark.asyncio
 async def test_replace_placeholders_in_text(
-    faker_: mock.AsyncMock,
+    faker_: mock.Mock,
     test: str,
     text: str,
     fake_data: Dict[str, List[str]],
