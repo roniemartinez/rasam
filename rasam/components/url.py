@@ -1,14 +1,8 @@
-#!/usr/bin/env python
-# __author__ = "Ronie Martinez"
-# __copyright__ = "Copyright 2020, Ronie Martinez"
-# __credits__ = ["Ronie Martinez"]
-# __maintainer__ = "Ronie Martinez"
-# __email__ = "ronmarti18@gmail.com"
-from typing import Any, Dict, Optional, Text
+from typing import Any, Dict, Optional, Set, Text
 
 import urlextract
 from rasa.nlu.extractors.extractor import EntityExtractor
-from rasa.nlu.training_data import Message
+from rasa.shared.nlu.training_data.message import Message
 
 
 class URLEntityExtractor(EntityExtractor):
@@ -17,10 +11,10 @@ class URLEntityExtractor(EntityExtractor):
         self.extractor = urlextract.URLExtract()
 
     def process(self, message: Message, **kwargs: Any) -> None:
-        urls = set()
+        urls: Set[Any] = set()
         last_pos = 0
-        for url in self.extractor.gen_urls(message.text):
-            start = message.text.find(url, last_pos)
+        for url in self.extractor.gen_urls(message.data.get("text")):
+            start = message.data.get("text").find(url, last_pos)
             end = start + len(url)
             last_pos = end
             urls.add(
@@ -40,5 +34,7 @@ class URLEntityExtractor(EntityExtractor):
         )
 
         message.set(
-            "entities", sorted(entities, key=lambda x: x.get("confidence", 0), reverse=True), add_to_output=True
+            "entities",
+            sorted(entities, key=lambda x: x.get("confidence", 0), reverse=True),
+            add_to_output=True,
         )

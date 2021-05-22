@@ -11,7 +11,7 @@ Rasa Improved
     </tr>
     <tr>
         <td>Travis CI</td>
-        <td><img src='https://travis-ci.org/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
+        <td><img src='https://www.travis-ci.com/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
         <td>Coverage</td>
         <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/master/graph/badge.svg' alt="CodeCov"></td>
     </tr>
@@ -38,7 +38,7 @@ If you like `rasam` or if it is useful to you, show your support by buying me a 
 
 ### Installation
 
-```shell script
+```bash
 pip install rasam
 ```
 
@@ -54,7 +54,7 @@ pipeline:
   - name: rasam.URLEntityExtractor
 ```
 
-### Rasa `nlu.md`
+### Rasa `nlu.yml`
 
 #### PlaceholderImporter
 
@@ -62,18 +62,22 @@ The `PlaceholderImporter` removes the need to write unnecessary information (eg.
 
 #### Using `{}` placeholder
 
-```markdown
-## intent:tell_name
-- My name is {name}
-- I am {name} and he is {name}
+```yaml
+nlu:
+- intent: tell_name
+  examples: |
+    - My name is {name}
+    - I am {name} and he is {name}
 ```
 
 #### Using `@` placeholder
 
-```markdown
-## intent:tell_address
-- I live in @address
-- I stay at @address and @address
+```yaml
+nlu:
+- intent: tell_address
+  examples: |
+    - I live in @address
+    - I stay at @address and @address
 ```
 
 #### Mixing `{}` and `@` placeholders
@@ -118,7 +122,7 @@ Rasam aims to remove these Rasa boilerplates to make writing chatbots easier.
 
 #### @action decorator
 
-The `@action` decorator converts function into an Action classes. 
+The `@action` decorator converts function into an Action class. 
 Here is an example of how we can write custom classes in Rasa:
 
 ```python
@@ -145,7 +149,7 @@ from rasam import action
 
 @action
 def action_hello_world(
-    self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    self: Action, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
 ) -> List[Dict[Text, Any]]:
     dispatcher.utter_message(text="Hello World!")
     return []
