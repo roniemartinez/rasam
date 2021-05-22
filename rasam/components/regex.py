@@ -16,7 +16,7 @@ class RegexEntityExtractor(EntityExtractor):
     def __init__(self, component_config: Optional[Dict[Text, Any]] = None) -> None:
         super().__init__(component_config)
         self.regex_features = []
-        if component_config is None:
+        if not component_config:
             return
         for regex_feature in component_config.get("regex_features", []):
             regex_feature["compiled"] = re.compile(regex_feature["pattern"])
