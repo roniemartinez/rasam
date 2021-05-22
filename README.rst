@@ -20,7 +20,6 @@ Rasa Improved
        <tr>
            <td>Travis CI</td>
            <td><img src='https://www.travis-ci.com/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
-           <td><img src='https://travis-ci.org/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
            <td>Coverage</td>
            <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/master/graph/badge.svg' alt="CodeCov"></td>
        </tr>
@@ -69,8 +68,8 @@ Rasa ``config.yml``
      - name: rasam.RegexEntityExtractor
      - name: rasam.URLEntityExtractor
 
-Rasa ``nlu.md``
-^^^^^^^^^^^^^^^^^^^
+Rasa ``nlu.yml``
+^^^^^^^^^^^^^^^^^^^^
 
 PlaceholderImporter
 ~~~~~~~~~~~~~~~~~~~
@@ -80,20 +79,24 @@ The ``PlaceholderImporter`` removes the need to write unnecessary information (e
 Using ``{}`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: markdown
+.. code-block:: yaml
 
-   ## intent:tell_name
-   - My name is {name}
-   - I am {name} and he is {name}
+   nlu:
+   - intent: tell_name
+     examples: |
+       - My name is {name}
+       - I am {name} and he is {name}
 
 Using ``@`` placeholder
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: markdown
+.. code-block:: yaml
 
-   ## intent:tell_address
-   - I live in @address
-   - I stay at @address and @address
+   nlu:
+   - intent: tell_address
+     examples: |
+       - I live in @address
+       - I stay at @address and @address
 
 Mixing ``{}`` and ``@`` placeholders
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,7 +172,7 @@ The above code can be simplified using Rasam's ``@action`` decorator.
 
    @action
    def action_hello_world(
-       self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+       self: Action, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
    ) -> List[Dict[Text, Any]]:
        dispatcher.utter_message(text="Hello World!")
        return []

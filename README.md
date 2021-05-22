@@ -54,7 +54,7 @@ pipeline:
   - name: rasam.URLEntityExtractor
 ```
 
-### Rasa `nlu.md`
+### Rasa `nlu.yml`
 
 #### PlaceholderImporter
 
@@ -62,18 +62,22 @@ The `PlaceholderImporter` removes the need to write unnecessary information (eg.
 
 #### Using `{}` placeholder
 
-```markdown
-## intent:tell_name
-- My name is {name}
-- I am {name} and he is {name}
+```yaml
+nlu:
+- intent: tell_name
+  examples: |
+    - My name is {name}
+    - I am {name} and he is {name}
 ```
 
 #### Using `@` placeholder
 
-```markdown
-## intent:tell_address
-- I live in @address
-- I stay at @address and @address
+```yaml
+nlu:
+- intent: tell_address
+  examples: |
+    - I live in @address
+    - I stay at @address and @address
 ```
 
 #### Mixing `{}` and `@` placeholders
@@ -145,7 +149,7 @@ from rasam import action
 
 @action
 def action_hello_world(
-    self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    self: Action, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
 ) -> List[Dict[Text, Any]]:
     dispatcher.utter_message(text="Hello World!")
     return []
