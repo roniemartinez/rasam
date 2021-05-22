@@ -138,7 +138,7 @@ class PlaceholderImporter(RasaFileImporter):
         yields: Tuple(placeholder text, placeholder name, match start)
         """
         for item in self.placeholder_regex.finditer(text):
-            yield *[i for i in item.groups() if i][:2], item.start()
+            yield tuple([i for i in item.groups() if i][:2]) + (item.start(),)
 
     @staticmethod
     async def rebuild_original_text(example: Message) -> str:

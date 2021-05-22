@@ -29,8 +29,9 @@ class URLEntityExtractor(EntityExtractor):
                     }.items()
                 )
             )
-
-        entities = message.get("entities", []) + list(map(dict, urls))
+        entities = message.get("entities", []) + list(
+            sorted(map(dict, urls), key=lambda x: x.get("start"))  # type: ignore
+        )
 
         message.set(
             "entities",
