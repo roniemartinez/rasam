@@ -20,6 +20,7 @@ Rasa Improved
        <tr>
            <td>Travis CI</td>
            <td><img src='https://www.travis-ci.com/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
+           <td><img src='https://travis-ci.org/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
            <td>Coverage</td>
            <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/master/graph/badge.svg' alt="CodeCov"></td>
        </tr>
