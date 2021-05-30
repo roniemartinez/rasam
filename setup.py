@@ -37,5 +37,5 @@ setup(
     package_dir={"": "."},
     package_data={},
     install_requires=['faker==8.*,>=8.1.4', 'rasa==2.*,>=2.6.1', 'urlextract==1.*,>=1.2.0'],
-    extras_require={"dev": ["autoflake==1.*,>=1.3.1", "black==21.*,>=21.5.0.b1", "codecov==2.*,>=2.0.22", "dephell==0.*,>=0.8.2", "flake8==3.*,>=3.7.9", "isort==5.*,>=5.8.0", "mypy==0.*,>=0.812.0", "pytest==6.*,>=6.2.4", "pytest-asyncio==0.*,>=0.15.1", "pytest-cov==2.*,>=2.8.1"]},
+    extras_require={"dev": ["autoflake==1.*,>=1.3.1", "black==21.*,>=21.5.0.b1", "codecov==2.*,>=2.0.22", "dephell==0.*,>=0.8.2", "flake8==3.*,>=3.7.9", "isort==5.*,>=5.8.0", "mypy==0.*,>=0.812.0", "pytest==6.*,>=6.2.4", "pytest-asyncio==0.*,>=0.15.1", "pytest-cov==2.*,>=2.8.1", "tomlkit==0.7.0"]},
 )
