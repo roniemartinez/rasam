@@ -912,16 +912,17 @@ python-versions = "*"
 
 [[package]]
 name = "isort"
-version = "5.8.0"
+version = "5.9.0"
 description = "A Python utility / library to sort Python imports."
 category = "dev"
 optional = false
-python-versions = ">=3.6,<4.0"
+python-versions = ">=3.6.1,<4.0"
 
 [package.extras]
 pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
 requirements_deprecated_finder = ["pipreqs", "pip-api"]
 colors = ["colorama (>=0.4.3,<0.5.0)"]
+plugins = ["setuptools"]
 
 [[package]]
 name = "jinja2"
@@ -2412,7 +2413,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.6.2,<3.9"
-content-hash = "951f144e43e7204eb13cf44859857d813b0847e34ff8539af6708391405bd1fe"
+content-hash = "153dbfdddd760f6f36b57feafb215c87009a110926d950572e8fed0b4b89db67"
 
 [metadata.files]
 absl-py = [
@@ -2974,8 +2975,8 @@ ipaddress = [
     {file = "ipaddress-1.0.23.tar.gz", hash = "sha256:b7f8e0369580bb4a24d5ba1d7cc29660a4a6987763faf1d8a8046830e020e7e2"},
 ]
 isort = [
-    {file = "isort-5.8.0-py3-none-any.whl", hash = "sha256:2bb1680aad211e3c9944dbce1d4ba09a989f04e238296c87fe2139faa26d655d"},
-    {file = "isort-5.8.0.tar.gz", hash = "sha256:0a943902919f65c5684ac4e0154b1ad4fac6dcaa5d9f3426b732f1c8b5419be6"},
+    {file = "isort-5.9.0-py3-none-any.whl", hash = "sha256:e6b6111242682a9082738d0ba71a48ba5db0fa6fdabb169db9de13b48ad51840"},
+    {file = "isort-5.9.0.tar.gz", hash = "sha256:8fd40deb804e5ce21dbbb92d0a9a79907209a0f2ba42be571c2963499c0d4829"},
 ]
 jinja2 = [
     {file = "Jinja2-3.0.1-py3-none-any.whl", hash = "sha256:1f06f2da51e7b56b8f238affdd6b4e2c61e39598a378cc49345bc1bd42a978a4"},
