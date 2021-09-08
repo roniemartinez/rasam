@@ -1599,19 +1599,19 @@ docs = ["Sphinx (>=3.3,<4.0)", "sphinx-rtd-theme (>=0.5.0,<0.6.0)", "sphinx-auto
 
 [[package]]
 name = "rasa"
-version = "2.7.1"
+version = "2.8.5"
 description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
 category = "main"
 optional = false
 python-versions = ">=3.6,<3.9"
 
 [package.dependencies]
-absl-py = ">=0.9,<0.13"
+absl-py = ">=0.9,<0.14"
 aio-pika = ">=6.7.1,<7.0.0"
 aiohttp = ">=3.6,<3.7.4.post0 || >3.7.4.post0,<3.8"
 apscheduler = ">=3.6,<3.8"
 async_generator = ">=1.10,<1.11"
-attrs = ">=19.3,<20.4"
+attrs = ">=19.3,<21.3"
 boto3 = ">=1.12,<2.0"
 cloudpickle = ">=1.2,<1.7"
 colorama = {version = ">=0.4.4,<0.5.0", markers = "sys_platform == \"win32\""}
@@ -1630,7 +1630,7 @@ numpy = ">=1.16,<1.19"
 oauth2client = "4.1.3"
 packaging = ">=20.0,<21.0"
 prompt-toolkit = ">=2.0,<3.0"
-psycopg2-binary = ">=2.8.2,<2.9.0"
+psycopg2-binary = ">=2.8.2,<2.10.0"
 pydot = ">=1.4,<1.5"
 PyJWT = {version = ">=2.0.0,<3.0.0", extras = ["crypto"]}
 pykwalify = ">=1.7,<1.9"
@@ -1641,29 +1641,29 @@ python-engineio = ">=4,<5.0.0 || >5.0.0,<6"
 python-socketio = ">=4.4,<6"
 pytz = ">=2019.1,<2022.0"
 questionary = ">=1.5.1,<1.10.0"
-rasa-sdk = ">=2.7.0,<3.0.0"
+rasa-sdk = ">=2.8.1,<3.0.0"
 redis = ">=3.4,<4.0"
-regex = ">=2020.6,<2020.10"
+regex = ">=2020.6,<2021.8"
 requests = ">=2.23,<3.0"
-rocketchat_API = ">=0.6.31,<1.16.0"
+rocketchat_API = ">=0.6.31,<1.17.0"
 "ruamel.yaml" = ">=0.16.5,<0.17.0"
 sanic = ">=19.12.2,<21.0.0"
 sanic-cors = ">=0.10.0b1,<0.11.0"
 sanic-jwt = ">=1.3.2,<2.0"
 scikit-learn = ">=0.22,<0.25"
 scipy = ">=1.4.1,<2.0.0"
-sentry-sdk = ">=0.17.0,<1.2.0"
+sentry-sdk = ">=0.17.0,<1.3.0"
 sklearn-crfsuite = ">=0.3,<0.4"
 slackclient = ">=2.0.0,<3.0.0"
-SQLAlchemy = ">=1.3.3,<1.4.0"
-tensorflow = ">=2.3,<2.4"
-tensorflow-addons = ">=0.10,<0.13"
+SQLAlchemy = ">=1.3.3,<1.5.0"
+tensorflow = ">=2.3.4,<3.0.0"
+tensorflow-addons = ">=0.10,<0.14"
 tensorflow-estimator = ">=2.3,<2.4"
-tensorflow_hub = ">=0.10,<0.11"
-tensorflow-probability = ">=0.11,<0.12"
+tensorflow_hub = ">=0.10,<0.13"
+tensorflow-probability = ">=0.11,<0.14"
 tensorflow-text = {version = ">=2.3,<2.4", markers = "sys_platform != \"win32\""}
 terminaltables = ">=3.1.0,<3.2.0"
-tqdm = ">=4.31,<4.60"
+tqdm = ">=4.31,<5.0"
 twilio = ">=6.26,<6.51"
 ujson = ">=1.35,<5.0"
 webexteamssdk = ">=1.1.1,<1.7.0"
@@ -1677,7 +1677,7 @@ transformers = ["transformers (>=2.4,<2.12)"]
 
 [[package]]
 name = "rasa-sdk"
-version = "2.7.0"
+version = "2.8.2"
 description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
 category = "main"
 optional = false
@@ -1689,6 +1689,7 @@ requests = ">=2.23.0,<2.26.0"
 sanic = ">=19.12.2,<21.0.0"
 sanic-cors = ">=0.10.0,<0.11.0"
 typing-extensions = ">=3.7.4,<4.0.0"
+urllib3 = ">=1.26.5,<2.0.0"
 uvloop = {version = "<0.15.0", markers = "sys_platform != \"win32\""}
 
 [[package]]
@@ -2072,7 +2073,7 @@ python-versions = "*"
 
 [[package]]
 name = "tensorflow"
-version = "2.3.2"
+version = "2.3.4"
 description = "TensorFlow is an open source machine learning framework for everyone."
 category = "main"
 optional = false
@@ -3604,12 +3605,12 @@ questionary = [
     {file = "questionary-1.9.0.tar.gz", hash = "sha256:a050fdbb81406cddca679a6f492c6272da90cb09988963817828f697cf091c55"},
 ]
 rasa = [
-    {file = "rasa-2.7.1-py3-none-any.whl", hash = "sha256:16dbf6058b40f4bbbd5f8ff87da6b4edc342ffd59dae5ee1182cc52b0d3992c1"},
-    {file = "rasa-2.7.1.tar.gz", hash = "sha256:783b5af1a17edee7fbf27885db4cf364bb596f331226297a91ee76135275e416"},
+    {file = "rasa-2.8.5-py3-none-any.whl", hash = "sha256:37566913b9403c625866d3e04e167e03f5e4c62b57f3ca4bae5a83160caa3200"},
+    {file = "rasa-2.8.5.tar.gz", hash = "sha256:270ac09e34f8686f82fc14c927e4792e0c85f9d7a5ac0ca5451d74d5f8f4e89e"},
 ]
 rasa-sdk = [
-    {file = "rasa-sdk-2.7.0.tar.gz", hash = "sha256:f69f473e02a8fd22f923f8fd7f48cdb1ef38e57ad7a14da37652677247e640ba"},
-    {file = "rasa_sdk-2.7.0-py3-none-any.whl", hash = "sha256:77ff093115088f68a083708c87713b95b93098af076342fc5a34051f5a681120"},
+    {file = "rasa-sdk-2.8.2.tar.gz", hash = "sha256:a34e79ff20026587e15f7f8392866addf8884f49beb4800c8e0adc15fbc5029d"},
+    {file = "rasa_sdk-2.8.2-py3-none-any.whl", hash = "sha256:a0a14bb8827e801b7d70f9e415e57df35d56d35c29d3cfdf9b11263b0d06d13f"},
 ]
 redis = [
     {file = "redis-3.5.3-py2.py3-none-any.whl", hash = "sha256:432b788c4530cfe16d8d943a09d40ca6c16149727e4afe8c2c9d5580c59d9f24"},
@@ -3863,15 +3864,15 @@ tensorboard-plugin-wit = [
     {file = "tensorboard_plugin_wit-1.8.0-py3-none-any.whl", hash = "sha256:2a80d1c551d741e99b2f197bb915d8a133e24adb8da1732b840041860f91183a"},
 ]
 tensorflow = [
-    {file = "tensorflow-2.3.2-cp36-cp36m-macosx_10_11_x86_64.whl", hash = "sha256:6aa0aa1e496979daaa577a04bf0db298e2193404c8bedee800e5caded84cf4b5"},
-    {file = "tensorflow-2.3.2-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:55e68ac2e91aaa56c7751c45ea4d951ce44b71d7dca452b5437ecd7b40493b13"},
-    {file = "tensorflow-2.3.2-cp36-cp36m-win_amd64.whl", hash = "sha256:fc46cb30a6f4bf6f99a1e1ab58ded5edc12b33aad3018c5bae0bb7a3fbd6e941"},
-    {file = "tensorflow-2.3.2-cp37-cp37m-macosx_10_11_x86_64.whl", hash = "sha256:ecdf21000e3fcb25df5da169e066e3a098084d758f5b0cf83cf973f8849f566c"},
-    {file = "tensorflow-2.3.2-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:9360ba5c002ed2af0fad9d449791bcda01622db7e7d8758e547ea3dde44439aa"},
-    {file = "tensorflow-2.3.2-cp37-cp37m-win_amd64.whl", hash = "sha256:b9018feabb002dcb7841df842655231b1f6db07ac00bce8c1b6dc67a9ff150d1"},
-    {file = "tensorflow-2.3.2-cp38-cp38-macosx_10_11_x86_64.whl", hash = "sha256:ae1c2acb2b210181177017b64bc22044df8cf25a014568a78f4c612d832bbc00"},
-    {file = "tensorflow-2.3.2-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:c85d29c7b5c000b196200a25e18a5905cc04f75c989e508f8fd110f3b2c4b4fe"},
-    {file = "tensorflow-2.3.2-cp38-cp38-win_amd64.whl", hash = "sha256:9bd01d95243d3023afbe3df3298fdc55db3e05d48ba606000d679d54702b20c8"},
+    {file = "tensorflow-2.3.4-cp36-cp36m-macosx_10_11_x86_64.whl", hash = "sha256:8e5cb20ad3cbb30a603eb27ec3e1baee9bc4fc8360f8ce2b8ebc9ee1d2592cfb"},
+    {file = "tensorflow-2.3.4-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:b6d068cbdf53809688d8eff3fb5bea030f350ff7f507035832a743b4efa4094b"},
+    {file = "tensorflow-2.3.4-cp36-cp36m-win_amd64.whl", hash = "sha256:dcc337db41a55038b2ba7b24266ff5704e36b0666263d3f906027eb9e651466d"},
+    {file = "tensorflow-2.3.4-cp37-cp37m-macosx_10_11_x86_64.whl", hash = "sha256:807cf068ad5fb5ac70ff290425117df8751cd91c41a8e8884453185005ef4401"},
+    {file = "tensorflow-2.3.4-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:f118f2fe8a116063ebfac6e67777a6b70e0179907c61d13b60fc2192005a6d8f"},
+    {file = "tensorflow-2.3.4-cp37-cp37m-win_amd64.whl", hash = "sha256:3075f16868e710b244924ef1a1b31447b665e3b35ccc43717358709dc1d4b6a0"},
+    {file = "tensorflow-2.3.4-cp38-cp38-macosx_10_11_x86_64.whl", hash = "sha256:7be77c2ca170d75b7b5c0abbf8f332facf33d1d9e6c500dd12117f75626c6ace"},
+    {file = "tensorflow-2.3.4-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:348090e6a86eee4b75eef5f72786da440c5fbf7b31bbd189758436025c0a23a9"},
+    {file = "tensorflow-2.3.4-cp38-cp38-win_amd64.whl", hash = "sha256:48135c40a6c4a01eed131bc11b9b2e44cd0c2e78adb85f3b4bd51d730af06e8e"},
 ]
 tensorflow-addons = [
     {file = "tensorflow_addons-0.12.0-cp36-cp36m-macosx_10_13_x86_64.whl", hash = "sha256:45fa42187e1126ec9f974d42b2b82eb13f4af111611b37f7f046fb6a177f744e"},
