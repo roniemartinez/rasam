@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rasam"
-version = "0.4.0"
+version = "0.4.1"
 description = "Rasa Improved"
 repository = "https://github.com/roniemartinez/rasam"
 authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
@@ -39,6 +39,7 @@ dephell = "^0.8.2"
 flake8 = "^4.0.1"
 isort = "^5.9.3"
 mypy = "^0.910"
+pyproject-flake8 = "^0.0.1-alpha.2"
 pytest = "^6.2.5"
 pytest-asyncio = "^0.16.0"
 pytest-cov = "^3.0.0"
@@ -51,20 +52,41 @@ force_grid_wrap = 0
 use_parentheses = true
 include_trailing_comma = true
 ensure_newline_before_comments = true
+atomic = true
 
 [tool.black]
 line-length = 120
 target-version = ['py38']
 include = '\.pyi?$'
-extend-exclude = '''
+extend-exclude = """
 # A regex preceded with ^/ will apply only to files and directories
 # in the root of the project.
-^/foo.py  # exclude a file named foo.py in the root of the project (in addition to the defaults)
-'''
+^/setup.py
+"""
+
+[tool.mypy]
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "pkg_resources",
+]
+ignore_missing_imports = true
+
+[tool.flake8]
+max-line-length = 120
+extend-ignore = "E203"
+extend-exclude = """
+setup.py,
+"""
+
+[tool.pytest.ini_options]
+addopts = "--cov=rasam --cov-report term-missing --cov-report=xml --cov-report=html -vv"
 
 [tool.dephell.main]
-from = {format = "poetry", path = "pyproject.toml"}
-to = {format = "setuppy", path = "setup.py"}
+from = { format = "poetry", path = "pyproject.toml" }
+to = { format = "setuppy", path = "setup.py" }
 
 [build-system]
 requires = ["poetry>=0.12"]

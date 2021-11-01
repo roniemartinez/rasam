@@ -1,3 +1,4 @@
+# flake8: noqa
 from rasam.components.regex import RegexEntityExtractor
 from rasam.components.url import URLEntityExtractor
 from rasam.decorators import action
