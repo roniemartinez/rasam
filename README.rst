@@ -18,8 +18,8 @@ Rasa Improved
            <td><img src='https://img.shields.io/pypi/v/rasam.svg' alt="Version"></td>
        </tr>
        <tr>
-           <td>Travis CI</td>
-           <td><img src='https://www.travis-ci.com/roniemartinez/rasam.svg?branch=master' alt="Travis CI"></td>
+           <td>Github Actions</td>
+           <td><img src='https://github.com/roniemartinez/rasam/actions/workflows/python.yml/badge.svg' alt="Github Actions"></td>
            <td>Coverage</td>
            <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/master/graph/badge.svg' alt="CodeCov"></td>
        </tr>
