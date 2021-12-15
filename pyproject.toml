@@ -38,6 +38,7 @@ codecov = "^2.1.12"
 dephell = "^0.8.2"
 flake8 = "^4.0.1"
 isort = "^5.10.1"
+mistune = "<2.0.0"  # not compatible with m2r
 mypy = "^0.910"
 pyproject-flake8 = "^0.0.1-alpha.2"
 pytest = "^6.2.5"
