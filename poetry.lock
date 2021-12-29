@@ -1665,7 +1665,7 @@ docs = ["Sphinx (>=3.3,<4.0)", "sphinx-rtd-theme (>=0.5.0,<0.6.0)", "sphinx-auto
 
 [[package]]
 name = "rasa"
-version = "2.8.17"
+version = "2.8.19"
 description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
 category = "main"
 optional = false
@@ -3875,8 +3875,8 @@ questionary = [
     {file = "questionary-1.9.0.tar.gz", hash = "sha256:a050fdbb81406cddca679a6f492c6272da90cb09988963817828f697cf091c55"},
 ]
 rasa = [
-    {file = "rasa-2.8.17-py3-none-any.whl", hash = "sha256:636186703593f3d7cdbff8ce2099963cb2a862a8dbaef67bfc32cc3d193db512"},
-    {file = "rasa-2.8.17.tar.gz", hash = "sha256:59f98637695fd7a019716a4e98c3b9bbb9c4be1e0f2f3b9bf66a2480c6dec890"},
+    {file = "rasa-2.8.19-py3-none-any.whl", hash = "sha256:b8d8504daf76173d7733b70c8ba5cf457c45f370d7401b8c3e8ad26d88126db3"},
+    {file = "rasa-2.8.19.tar.gz", hash = "sha256:a5e3fa79a63a2ee5a7551e749dc7d8ba625cdae570726b8a24b0aa4f9946b4b8"},
 ]
 rasa-sdk = [
     {file = "rasa-sdk-2.8.3.tar.gz", hash = "sha256:a69ae7b494ac61fc099b534f188fca6363a472a4db8e6a8807d777e478fc7187"},
