@@ -1665,7 +1665,7 @@ docs = ["Sphinx (>=3.3,<4.0)", "sphinx-rtd-theme (>=0.5.0,<0.6.0)", "sphinx-auto
 
 [[package]]
 name = "rasa"
-version = "2.8.21"
+version = "2.8.22"
 description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
 category = "main"
 optional = false
@@ -1708,7 +1708,7 @@ python-engineio = ">=4,<5.0.0 || >5.0.0,<6"
 python-socketio = ">=4.4,<6"
 pytz = ">=2019.1,<2022.0"
 questionary = ">=1.5.1,<1.10.0"
-rasa-sdk = ">=2.8.1,<3.0.0"
+rasa-sdk = ">=2.8.4,<3.0"
 redis = ">=3.4,<4.0"
 regex = ">=2020.6,<2021.8"
 requests = ">=2.23,<3.0"
@@ -1745,7 +1745,7 @@ transformers = ["transformers (>=2.4,<2.12)"]
 
 [[package]]
 name = "rasa-sdk"
-version = "2.8.3"
+version = "2.8.4"
 description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
 category = "main"
 optional = false
@@ -1753,9 +1753,9 @@ python-versions = ">=3.6,<3.9"
 
 [package.dependencies]
 coloredlogs = ">=10,<16"
-requests = ">=2.23.0,<2.26.0"
+requests = ">=2.23.0,<3.0.0"
 sanic = ">=19.12.2,<21.0.0"
-sanic-cors = ">=0.10.0,<0.11.0"
+sanic-cors = ">=0.10.0b1,<0.11.0"
 typing-extensions = ">=3.7.4,<4.0.0"
 urllib3 = ">=1.26.5,<2.0.0"
 uvloop = {version = "<0.15.0", markers = "sys_platform != \"win32\""}
@@ -3875,12 +3875,12 @@ questionary = [
     {file = "questionary-1.9.0.tar.gz", hash = "sha256:a050fdbb81406cddca679a6f492c6272da90cb09988963817828f697cf091c55"},
 ]
 rasa = [
-    {file = "rasa-2.8.21-py3-none-any.whl", hash = "sha256:3010406fc110ead88447db74094c77bae57afb17bc0c5c130fb47c32a0152355"},
-    {file = "rasa-2.8.21.tar.gz", hash = "sha256:5e3071aa7d31184e06762c1ce0c162d7da791b68959113ac07b2170af591b246"},
+    {file = "rasa-2.8.22-py3-none-any.whl", hash = "sha256:c488ba711d3f03f3faffd65b3d79698293d28ea64df58ae86b6a71563b59fa48"},
+    {file = "rasa-2.8.22.tar.gz", hash = "sha256:b808c02812a78d5a63c0c38a92770bb32a26f3e5766d4a8dda9fc4fdd74491aa"},
 ]
 rasa-sdk = [
-    {file = "rasa-sdk-2.8.3.tar.gz", hash = "sha256:a69ae7b494ac61fc099b534f188fca6363a472a4db8e6a8807d777e478fc7187"},
-    {file = "rasa_sdk-2.8.3-py3-none-any.whl", hash = "sha256:0b40e743458bfafe1a39e562bcc64c8ad231af544ee7fb76dadb82abe6c9cf5e"},
+    {file = "rasa-sdk-2.8.4.tar.gz", hash = "sha256:4c23191a653390bb38d8fd25075405c992a1e3e2d3e98393354f63f59ca8de13"},
+    {file = "rasa_sdk-2.8.4-py3-none-any.whl", hash = "sha256:a31273317949fec5dd5b29d2af6a6b23420081056645a2781a421b7a956edec0"},
 ]
 redis = [
     {file = "redis-3.5.3-py2.py3-none-any.whl", hash = "sha256:432b788c4530cfe16d8d943a09d40ca6c16149727e4afe8c2c9d5580c59d9f24"},
