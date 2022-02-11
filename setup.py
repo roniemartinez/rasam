@@ -24,7 +24,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='rasam',
-    version='0.5.1-alpha.0',
+    version='0.5.1',
     description='Rasa Improved',
     python_requires='<3.9,>=3.7',
     project_urls={"repository": "https://github.com/roniemartinez/rasam"},
