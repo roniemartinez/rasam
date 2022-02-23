@@ -36,6 +36,6 @@ setup(
     packages=['rasam'],
     package_dir={"": "."},
     package_data={},
-    install_requires=['faker<13.0.0,>=8.1.4', 'rasa==2.*,>=2.8.12', 'urlextract==1.*,>=1.2.0'],
+    install_requires=['faker>=8.1.4,<14.0.0', 'rasa==2.*,>=2.8.12', 'urlextract==1.*,>=1.2.0'],
     extras_require={"dev": ["autoflake==1.*,>=1.3.1", "black==22.1.0", "codecov==2.*,>=2.1.12", "dephell==0.*,>=0.8.2", "flake8==4.*,>=4.0.1", "isort==5.*,>=5.10.1", "mistune<2.0.0", "mypy==0.*,>=0.931.0", "pyproject-flake8==0.*,>=0.0.1.a2", "pytest==7.*,>=7.0.0", "pytest-asyncio==0.*,>=0.18.1", "pytest-cov==3.*,>=3.0.0", "tomlkit==0.7.0"]},
 )
