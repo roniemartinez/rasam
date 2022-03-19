@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rasam"
-version = "0.5.1"
+version = "0.5.2"
 description = "Rasa Improved"
 repository = "https://github.com/roniemartinez/rasam"
 authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
@@ -14,7 +14,6 @@ keywords = [
     "Regex entity extractor for Rasa",
     "Placeholder importer for Rasa",
 ]
-
 classifiers = [
     "Development Status :: 3 - Alpha",
     "License :: OSI Approved :: MIT License",
@@ -23,6 +22,9 @@ classifiers = [
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
+
+[tool.poetry.urls]
+"Donate" = "https://github.com/sponsors/roniemartinez"
 
 [tool.poetry.dependencies]
 python = ">=3.7,<3.9"
@@ -33,7 +35,6 @@ Faker = ">=8.1.4,<14.0.0"
 [tool.poetry.dev-dependencies]
 autoflake = "^1.3.1"
 black = "22.1.0"
-codecov = "^2.1.12"
 dephell = "^0.8.2"
 flake8 = "^4.0.1"
 isort = "^5.10.1"
@@ -82,12 +83,19 @@ setup.py,
 """
 
 [tool.pytest.ini_options]
-addopts = "--cov=rasam --cov-report term-missing --cov-report=xml --cov-report=html -vv"
+addopts = """\
+    --cov=rasam \
+    --cov-report=term-missing \
+    --cov-report=xml \
+    --cov-report=html \
+    -vv \
+    -x \
+"""
 
 [tool.dephell.main]
 from = { format = "poetry", path = "pyproject.toml" }
 to = { format = "setuppy", path = "setup.py" }
 
 [build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
