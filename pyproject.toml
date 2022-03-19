@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rasam"
-version = "0.5.1"
+version = "0.5.2"
 description = "Rasa Improved"
 repository = "https://github.com/roniemartinez/rasam"
 authors = ["Ronie Martinez <ronmarti18@gmail.com>"]
