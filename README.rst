@@ -1,11 +1,3 @@
-.. role:: raw-html-m2r(raw)
-   :format: html
-
-
-rasam
-=====
-
-Rasa Improved
 
 
 .. raw:: html
@@ -13,37 +5,35 @@ Rasa Improved
    <table>
        <tr>
            <td>License</td>
-           <td><img src='https://img.shields.io/pypi/l/rasam.svg' alt="License"></td>
+           <td><img src='https://img.shields.io/pypi/l/rasam.svg?style=for-the-badge' alt="License"></td>
            <td>Version</td>
-           <td><img src='https://img.shields.io/pypi/v/rasam.svg' alt="Version"></td>
+           <td><img src='https://img.shields.io/pypi/v/rasam.svg?logo=pypi&style=for-the-badge' alt="Version"></td>
        </tr>
        <tr>
            <td>Github Actions</td>
-           <td><img src='https://github.com/roniemartinez/rasam/actions/workflows/python.yml/badge.svg' alt="Github Actions"></td>
+           <td><img src='https://img.shields.io/github/workflow/status/roniemartinez/rasam/Python?label=actions&logo=github%20actions&style=for-the-badge' alt="Github Actions"></td>
            <td>Coverage</td>
-           <td><img src='https://codecov.io/gh/roniemartinez/rasam/branch/master/graph/badge.svg' alt="CodeCov"></td>
+           <td><img src='https://img.shields.io/codecov/c/github/roniemartinez/rasam/branch?label=codecov&logo=codecov&style=for-the-badge' alt="CodeCov"></td>
        </tr>
        <tr>
            <td>Supported versions</td>
-           <td><img src='https://img.shields.io/pypi/pyversions/rasam.svg' alt="Python Versions"></td>
+           <td><img src='https://img.shields.io/pypi/pyversions/rasam.svg?logo=python&style=for-the-badge' alt="Python Versions"></td>
            <td>Wheel</td>
-           <td><img src='https://img.shields.io/pypi/wheel/rasam.svg' alt="Wheel"></td>
+           <td><img src='https://img.shields.io/pypi/wheel/rasam.svg?style=for-the-badge' alt="Wheel"></td>
        </tr>
        <tr>
            <td>Status</td>
-           <td><img src='https://img.shields.io/pypi/status/rasam.svg' alt="Status"></td>
+           <td><img src='https://img.shields.io/pypi/status/rasam.svg?style=for-the-badge' alt="Status"></td>
            <td>Downloads</td>
-           <td><img src='https://img.shields.io/pypi/dm/rasam.svg' alt="Downloads"></td>
+           <td><img src='https://img.shields.io/pypi/dm/rasam.svg?style=for-the-badge' alt="Downloads"></td>
        </tr>
    </table>
 
 
-Support
--------
+rasam
+=====
 
-If you like ``rasam`` or if it is useful to you, show your support by buying me a coffee.
-
-:raw-html-m2r:`<a href="https://www.buymeacoffee.com/roniemartinez" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>`
+Rasa Improved
 
 Usage
 -----
@@ -180,4 +170,5 @@ The above code can be simplified using Rasam's ``@action`` decorator.
 Author
 ------
 
-`Ronie Martinez <ronmarti18@gmail.com>`_ 
+
+* `Ronie Martinez <mailto:ronmarti18@gmail.com>`_
