@@ -2355,7 +2355,7 @@ python-versions = "~=3.7"
 
 [[package]]
 name = "urlextract"
-version = "1.5.0"
+version = "1.6.0"
 description = "Collects and extracts URLs from given text."
 category = "main"
 optional = false
@@ -4274,8 +4274,8 @@ uritools = [
     {file = "uritools-4.0.0.tar.gz", hash = "sha256:420d94c1ff4bf90c678fca9c17b8314243bbcaa992c400a95e327f7f622e1edf"},
 ]
 urlextract = [
-    {file = "urlextract-1.5.0-py3-none-any.whl", hash = "sha256:612e85fb3fe11a946c649adc3cdda47296054ccec23cc381d4802605451f2f28"},
-    {file = "urlextract-1.5.0.tar.gz", hash = "sha256:40a5c843d1d7253758f56f0d6748c5ea27a4a14565e3a92f25a916ddc4c1e41f"},
+    {file = "urlextract-1.6.0-py3-none-any.whl", hash = "sha256:c22a9645cae1e1390cc512fd4f4d1f37b72538eecfdc3365905a2e616e7b6b88"},
+    {file = "urlextract-1.6.0.tar.gz", hash = "sha256:574f0d8c562d377336a5154840c7e4eecf54c102a538971c897f7313075a8887"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.8-py2.py3-none-any.whl", hash = "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed"},
